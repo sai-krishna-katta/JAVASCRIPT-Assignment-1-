@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Using call Example
+        function greet(greeting) {
+  console.log(`${greeting}, my name is ${this.name}.`);
+}
+const person = {
+  name: "Sai Krishna"
+};
+
+greet.call(person, "Hello"); 
+
+// Using apply Example
+function introduce(greeting, age) {
+  console.log(`${greeting}, my name is ${this.name} and I am ${age} years old.`);
+}
+const person2 = {
+  name: "Sai Krishna"
+};
+introduce.apply(person2, ["Hi", 22]);
+
+// Using bind
+function sayAge() {
+  console.log(`I am ${this.age} years old.`);
+}
+const person3 = {
+  age: 22
+};
+const boundSayAge = sayAge.bind(person3);
+boundSayAge(); 
+    </script>
+</body>
+</html>

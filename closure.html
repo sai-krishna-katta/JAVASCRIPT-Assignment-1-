@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // EXAMPLE 1
+        function createCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  };
+}
+const counter = createCounter();
+console.log(counter()); 
+console.log(counter()); 
+console.log(counter()); 
+
+ // EXAMPLE 2
+ function greeting(name) {
+  return function() {
+    console.log("Hello, " + name);
+  };
+}
+
+const sayHello = greeting("Sai Krishna");
+sayHello(); 
+
+    </script>
+</body>
+</html>
